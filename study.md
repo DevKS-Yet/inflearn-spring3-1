@@ -59,3 +59,7 @@
 - HTTP 파라미터가 `String`, `int`, `Integer` 등의 단순 타입이면 `@RequestParam`도 생략 가능
 - 팀이 스프링에 아직 익숙하지 않는다면 `@RequestParam`을 쓰고 아니라면 뺴는것을 고민해볼만 하다
 - `defaultValue`로 설정을 했을 경우 파라미터가 빈 문자("")일 경우에도 defaultValue로 설정됨
+
+#### HTTP 요청 파라미터 - @ModelAttribute
+- `@ModelAttribute`를 사용함으로써 지금까지 적어온 `@RequestParam` 같이 갖고 오는 파라미터를 다 없앨 수 있다
+- `@ModelAttribute`도 생략 가능(argument resolver로 지정해둔 타입 외)
