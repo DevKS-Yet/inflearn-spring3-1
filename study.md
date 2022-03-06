@@ -47,3 +47,8 @@
     http://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-arguments
 - `@Controller`의 사용 가능한 응답 값 목록은 다음 공식 메뉴얼에서 확인할 수 있다.  
     http://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-return-types
+
+#### HTTP 요청 파라미터 - 쿼리 파라미터, HTML Form
+- 클라이언트에서 서버로 요청 데이터를 전달하는 방법
+  - `GET`, `POST`, `HTTP message body`
+- 
