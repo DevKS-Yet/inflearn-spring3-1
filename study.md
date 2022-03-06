@@ -27,3 +27,14 @@
   - 해당 경로 값으로 URL 호출이 오면 해당 메서드 실행
   - 대부분의 속성은 배열로 제공하므로 다중 설정이 가능. (예: `{"/hello-basic", "/hello-go"`)
 - 원칙상으로는 `/hello-basic`과 `/hello-basic/`은 다른 URL이지만 스프링에서는 자동
+
+#### 요청 매핑 - API 예시
+- 회원 관리 API
+
+| 기능       | Method |Mapping|
+|----------|--------|---|
+| 회원 목록 조회 | GET    | `/users` |
+| 회원 목록 | POST   | `/users` |
+| 회원 조회 | GET    | `/users/{userId}` |
+| 회원 수정 | PATCH  | `/users/{userId}` |
+| 회원 삭제 | DELETE | `/users/{userId}` |
