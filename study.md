@@ -19,3 +19,11 @@
   - SLF4J - http://www.slf4j.org
   - Logback - http://logback.qos.ch
   - spring boot log - https://docs.spring.io/spring-boot-docs/current/reference/html/spring-boot-features.html#boot-features-logging
+
+#### 요청 매핑
+- `@RestController`
+  - 반환 값으로 뷰를 찾는 것이 아니라 HTTP 메시지 바디에 바로 입력 한다
+- `@RequestMapping(경로)`
+  - 해당 경로 값으로 URL 호출이 오면 해당 메서드 실행
+  - 대부분의 속성은 배열로 제공하므로 다중 설정이 가능. (예: `{"/hello-basic", "/hello-go"`)
+- 원칙상으로는 `/hello-basic`과 `/hello-basic/`은 다른 URL이지만 스프링에서는 자동
