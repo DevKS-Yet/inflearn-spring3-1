@@ -51,4 +51,11 @@
 #### HTTP 요청 파라미터 - 쿼리 파라미터, HTML Form
 - 클라이언트에서 서버로 요청 데이터를 전달하는 방법
   - `GET`, `POST`, `HTTP message body`
-- 
+
+#### HTTP 요청 파라미터 - @RequestParam
+- `@RequestParam` : 파라미터 이름으로 바인딩
+- `@ResponseBody` : View 조회를 무시하고 HTTP message body에 직접 해당 내용 입력
+- HTTP 파라미터 이름이 변수 이름과 같으면 `@RequestParam(name = "??")` 생략 가능
+- HTTP 파라미터가 `String`, `int`, `Integer` 등의 단순 타입이면 `@RequestParam`도 생략 가능
+- 팀이 스프링에 아직 익숙하지 않는다면 `@RequestParam`을 쓰고 아니라면 뺴는것을 고민해볼만 하다
+- `defaultValue`로 설정을 했을 경우 파라미터가 빈 문자("")일 경우에도 defaultValue로 설정됨
