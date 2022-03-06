@@ -38,3 +38,12 @@
 | 회원 조회 | GET    | `/users/{userId}` |
 | 회원 수정 | PATCH  | `/users/{userId}` |
 | 회원 삭제 | DELETE | `/users/{userId}` |
+
+### 2022-03-07
+#### HTTP 요청 - 기본, 헤더 조회
+- locale 관련해서는 locale resolver에 대해서 공부해보자
+- `MultiValueMap`은 하나의 키에 여러 값을 받을 수 있다.(???... 이거 카카오 코딩테스트에 사용 쌉가능... 하 괜히 힘들게 Map이랑 List로 뻘짓했네)
+- `@Controller`의 사용 가능한 파라미터 목록은 다음 공식 메뉴얼에서 확인할 수 있다.  
+    http://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-arguments
+- `@Controller`의 사용 가능한 응답 값 목록은 다음 공식 메뉴얼에서 확인할 수 있다.  
+    http://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-return-types
