@@ -63,3 +63,22 @@
 #### HTTP 요청 파라미터 - @ModelAttribute
 - `@ModelAttribute`를 사용함으로써 지금까지 적어온 `@RequestParam` 같이 갖고 오는 파라미터를 다 없앨 수 있다
 - `@ModelAttribute`도 생략 가능(argument resolver로 지정해둔 타입 외)
+
+
+#### HTTP 요청 메시지 - 단순 텍스트
+- `HTTP message body`에 데이터를 직접 담아서 요청
+  - HTTP API에서 주로 사용, JSON, XML, TEXT
+  - 데이터 형식은 주로 JSON 사용
+  - POST, PUT, PATCH
+- HttpEntity
+  - 메시지 바디 정보를 직접 조회
+  - 요청 파라미터를 조회하는 기능과 관계 없음
+  - 응답에도 사용 가능
+  - 헤더 정보 포함 가능
+  - view 조회 하지 않음
+- `@RequestBody`
+  - HTTP 메시지 바디를 조회할 수 있ek
+- HTTP Message Converter
+- 요청 파라미터 vs HTTP 메시지 바디
+  - 요청 파라미터를 조회하는 기능 : `@RequestParam`, `@ModelAttribute`
+  - HTTP 메시지 바디를 직접 조회하는 기능 : `@RequestBody`
