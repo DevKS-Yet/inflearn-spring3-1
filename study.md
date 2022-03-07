@@ -87,3 +87,10 @@
 - `@RequestParam` = `String`, `int`, `Integer` 같은 단순 타입
 - `@ModelAtrribute` = 나머지(argument resolver로 지정해둔 타입 외)
 
+#### 응답 - 정적 리소스, 뷰 템플릿
+- 정적 리소스
+  - `/static`, `/public`, `/resources`, `/META-INF/resources`
+- 뷰 템플릿
+  - `src/main/resources/templates`
+- HTTP 메시지 사용
+
