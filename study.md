@@ -82,3 +82,8 @@
 - 요청 파라미터 vs HTTP 메시지 바디
   - 요청 파라미터를 조회하는 기능 : `@RequestParam`, `@ModelAttribute`
   - HTTP 메시지 바디를 직접 조회하는 기능 : `@RequestBody`
+
+#### HTTP 요청 메시지 - JSON
+- `@RequestParam` = `String`, `int`, `Integer` 같은 단순 타입
+- `@ModelAtrribute` = 나머지(argument resolver로 지정해둔 타입 외)
+
