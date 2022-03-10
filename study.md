@@ -94,3 +94,25 @@
   - `src/main/resources/templates`
 - HTTP 메시지 사용
 
+### 2022-03-10
+
+#### HTTP 메시지 컨버터
+- `@ResponseBody` 사용 원리
+  - HTTP 메시지 컨버터가 동작(JsonConverter/StringConverter)
+    - 기본 문자처리 : `StringHttpMessageConverter`
+    - 기본 객체처리 : `MappingJacson2HttpMessageConverter`
+    - byte 처리 등등 기타 여러 HttpMessageConverter가 기본으로 등록되어 있음
+- 스프링 MVC는 다음의 경우에 HTTP 메시지 컨버터를 적용함
+  - HTTP 요청 : `@RequestBody`, `HttpEntity(RequestEntity)`
+  - HTTP 응답 : `@ResponseBody`, `HttpEntity(ResponseEntity)`
+- HTTP 메시지 컨버터 인터페이스
+- HTTP 메시지 컨버터는 HTTP 요청, HTTP 응답 둘 다 사용된다.
+  - `canRead()`, `canWrite()`: 메시지 컨버터가 해당 클래스, 미디어타입을 지원하는지 체크
+  - `read()`, `write()` : 메시지 컨버터를 통해서 메시지를 읽고 쓰는 기능
+- 메시지 컨버터는 대상 클래스 타입과 미디어 타입 둘을 체크함 만약 둘다 만족하지 않는다면 다음 메시지 컨버터로 우선순위가 넘어감
+  - `canRead()` 조건을 만족하면 `read()`를 호출해서 객체 생성하고 반환함
+  - `canWrite()` 조건을 만족하면 `write()`를 호출해서 HTTP 응답 메시지 바디에 데이터를 생성함
+- 예시
+  - `content-type: application/json` + `@RequestBody String data` 라면 `StringHttpMessageConverter`
+  - `content-type: application/json` + `@RequestBody HelloData data` 라면 `MappingJackson2HttpMessageConverter`
+  - `content-type: text/html` + `@RequestBody HelloData data` 라면 에러
