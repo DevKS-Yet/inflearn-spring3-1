@@ -77,7 +77,7 @@
   - 헤더 정보 포함 가능
   - view 조회 하지 않음
 - `@RequestBody`
-  - HTTP 메시지 바디를 조회할 수 있ek
+  - HTTP 메시지 바디를 조회할 수 있다
 - HTTP Message Converter
 - 요청 파라미터 vs HTTP 메시지 바디
   - 요청 파라미터를 조회하는 기능 : `@RequestParam`, `@ModelAttribute`
@@ -116,3 +116,12 @@
   - `content-type: application/json` + `@RequestBody String data` 라면 `StringHttpMessageConverter`
   - `content-type: application/json` + `@RequestBody HelloData data` 라면 `MappingJackson2HttpMessageConverter`
   - `content-type: text/html` + `@RequestBody HelloData data` 라면 에러
+
+#### 요청 매핑 핸들러 어뎁터 구조
+- HTTP 메시지 컨버터는 어디서 작동이 되는 것일까?
+- `@Controller`가 각종 객체 또는 아무 타입의 데이터를 처리하는데 어떻게 그것들을 구분하여 처리할 수 있을까?
+  - 그 해답은 `ArgumentResolver`에 있음
+  - 어노테이션 기반 컨트롤러를 처리하는 `RequestMappingHandlerAdaptor`가 `ArgumentResolver`에 요청 및 응답을 받음
+  - 이후 `RequestMappingHandleAdaptor` -> `Handler(Controller)`
+- 스프링은 30개가 넘는 `ArgumentResolver`를 제공함(https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-arguments)
+- 확장은 `WebMvcConfigurer`를 상속 받아서 확장하면 된다.
